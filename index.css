@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Montserrat", sans-serif;
+  color: #282828;
+}
+/***** 2. Build the foundations *****/
+/*
+Challenge:
+1. Get this layout looking like the 
+   screenshots on the slide.
+*/
+
+/* 
+colors ==>
+#282828
+whitesmoke
+
+font ==> Montserrat
+
+ul ==> padding: 25px
+
+logo ==> 
+size: 18px
+weight: 700
+
+icon ==> width: 25px
+
+h1 ==>
+size: 40px
+weight: 400
+X-margin: 25px
+Y-margin: 30px
+
+caption ==>
+X-margin: 25px
+Y-margin: 0px
+
+*/
+
+header {
+  color: whitesmoke;
+  background-color: #282828;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  /* justify-content: start; */
+  align-items: center;
+  gap: 10px;
+
+  margin: 0;
+  padding: 25px;
+}
+
+li {
+  cursor: pointer;
+}
+
+.icon {
+  width: 25px;
+}
+/***** 4. Position the menu icon *****/
+/* 
+Challenge:
+1. Add a line of CSS to position the menu 
+   icon at the right-hand end of the ul 
+   element. The logo and location pin should 
+   remain where they are.
+*/
+.align-right {
+  /* margin: 0 0 auto auto; */
+  margin-left: auto;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 400;
+  margin: 30px 25px;
+}
+
+/* section:nth-child(2) {
+  position: relative;
+} */
+
+.item {
+  position: relative;
+}
+
+.item-img {
+  /* to make each img fit w/in the browser page  */
+  width: 100%;
+}
+
+.caption {
+  margin: 0 25px;
+}
+
+.img-banner {
+  /* 6. Add the image banner */
+  /* Challenge:
+     1. Position the image banner at the top left of the first image as per the slide. What CSS do you need to add to the parent element ( section:nth-child(2) ) to make this work? [ or position of .item can be set to relative ]
+  */
+  position: absolute;
+  /* element has been taken out of flow of content & is now obscuring the txt & also shrunk down to the width it needs to accommodate its content; so when a block level element like div & set to position absolute, it takes on some of the behavior of an inline element & stretches only to the width needed to hold its content */
+  top: 0;
+  left: 0;
+
+  background-color: #cd6858;
+  color: whitesmoke;
+  padding: 10px;
+}
