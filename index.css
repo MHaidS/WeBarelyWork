@@ -1,43 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-
   font-family: "Montserrat", sans-serif;
   color: #282828;
 }
-/***** 2. Build the foundations *****/
-/*
-Challenge:
-1. Get this layout looking like the 
-   screenshots on the slide.
-*/
-
-/* 
-colors ==>
-#282828
-whitesmoke
-
-font ==> Montserrat
-
-ul ==> padding: 25px
-
-logo ==> 
-size: 18px
-weight: 700
-
-icon ==> width: 25px
-
-h1 ==>
-size: 40px
-weight: 400
-X-margin: 25px
-Y-margin: 30px
-
-caption ==>
-X-margin: 25px
-Y-margin: 0px
-
-*/
 
 header {
   color: whitesmoke;
@@ -52,7 +18,6 @@ header {
 ul {
   list-style: none;
   display: flex;
-  /* justify-content: start; */
   align-items: center;
   gap: 10px;
 
@@ -67,14 +32,7 @@ li {
 .icon {
   width: 25px;
 }
-/***** 4. Position the menu icon *****/
-/* 
-Challenge:
-1. Add a line of CSS to position the menu 
-   icon at the right-hand end of the ul 
-   element. The logo and location pin should 
-   remain where they are.
-*/
+/* Position the menu icon  at the right-hand end of the ul element. The logo and location pin should remain where they are. */
 .align-right {
   /* margin: 0 0 auto auto; */
   margin-left: auto;
@@ -86,34 +44,80 @@ h1 {
   margin: 30px 25px;
 }
 
-/* section:nth-child(2) {
-  position: relative;
-} */
-
 .item {
   position: relative;
 }
 
 .item-img {
+  /* block-level elements do not have whitespace on default */
+  display: block;
+  /*
+   ===>  <img> tag is rendered as an Inline element; when we put this inside a container,the CSS border property is implemented, that is, an extra whitespace is also generated between the lower border of container and the image inside it; this is done originally, so that parts of letters in alphabet like g or y that drop below the line, do not overlap other elements
+  */
   /* to make each img fit w/in the browser page  */
   width: 100%;
 }
 
 .caption {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 20px;
+
+  /*
+   Position the text and button at opposite
+   ends of the parent element. Make sure that 
+   there is always at least 20px of space 
+   between the button and the text, even when 
+   you make the browser narrower.
+*/
   margin: 0 25px;
 }
 
 .img-banner {
-  /* 6. Add the image banner */
-  /* Challenge:
-     1. Position the image banner at the top left of the first image as per the slide. What CSS do you need to add to the parent element ( section:nth-child(2) ) to make this work? [ or position of .item can be set to relative ]
-  */
+  /* Position the image banner at the top left of the first image */
   position: absolute;
-  /* element has been taken out of flow of content & is now obscuring the txt & also shrunk down to the width it needs to accommodate its content; so when a block level element like div & set to position absolute, it takes on some of the behavior of an inline element & stretches only to the width needed to hold its content */
   top: 0;
   left: 0;
 
   background-color: #cd6858;
   color: whitesmoke;
   padding: 10px;
+}
+
+button {
+  /* 8. Stop the vertical stretch on the button */
+  /* Centrally align the button on the vertical axis */
+  /* 'align-self' can be useful when only 1 element in a container needs adjusting  */
+  align-self: center;
+  border: none;
+  background-color: #cd6858;
+  color: whitesmoke;
+  padding: 10px 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chatbox-bg {
+  /* Position the chatbox in the bottom corner of the window, 6px from bottom and 6px from the right. 
+  */
+  position: fixed;
+  bottom: 6px;
+  right: 6px;
+
+  background-color: #dda15e;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px #999;
+
+  display: flex;
+}
+
+.chatbox-img {
+  /* Center the speech bubble image inside the circle. */
+  margin: auto;
+
+  width: 50%;
 }
